@@ -55,3 +55,25 @@ sudo -u postgres psql
 update installation_configs set locked = false;
 
 \q
+
+##Desistalar Chatwoot##
+
+rm -rf /home/chatwoot
+rm -rf /etc/nginx/sites-available/nginx_chatwoot.conf
+rm -rf /etc/nginx/sites-enabled/nginx_chatwoot.conf
+
+nginx -t
+
+kill -9 $(lsof -i tcp:3000 -t)
+
+# Uninstall ruby-sidekiq
+sudo apt-get remove --auto-remove ruby-sidekiq
+sudo apt-get purge ruby-sidekiq
+
+# Uninstall ruby
+aptitude purge ruby
+
+#Elimiar user chatwoot
+userdel -r chatwoot
+
+service nginx restart
