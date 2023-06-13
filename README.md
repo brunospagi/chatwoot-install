@@ -22,6 +22,39 @@ yes para todos
 
 #CASO DER ERRO OU DEMORAR MUITO REFAZER QUE A INSTALAÇÃO VAI SUBIR NORMANTE 
 _______________________________________________________________________________________
+
+Alterando Idioma e ativando sua tela de cadastro
+
+cd /home/chatwoot/chatwoot
+nano .env
+Altere a linha
+DEFAULT_LOCALE=pt_BR
+ENABLE_ACCOUNT_SIGNUP=true
+sudo systemctl restart chatwoot.target
+Acesse: seudominio.com.br
+Faça seu cadastro
+
+_________________________________________________________________________________________
+
+NOMES CHATWOOT TERMOS E POLITICA DE PRIVACIDADE
+
+Acesse super Admin
+
+https://seudominio.com.br/super_admin
+Opção>installation_configs
+LOGO
+LOGO_THUMBNAIL
+NOMES CHATWOOT:
+Alterando nomes na plataforma
+INSTALLATION_NAME
+BRAND_NAME
+TERMOS E POLITICA DE PRIVACIDADE
+TERMS_URL
+PRIVACY_URL
+BRAND_URL
+WIDGET_BRAND_URL
+
+
 **PARA FAZER ATUALIZAÇÃO DO CHATWOOT**
 
 sudo -i -u chatwoot
